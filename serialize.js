@@ -16,7 +16,7 @@ const web = require('./lib/server.js');
 const MsgHandler = require('./lib/handler.js')
 const cron = require('node-cron');
 const {
-    GevPlugin,
+    GevPlugin
     PluginInstall
 } = require("./lib/database/ext_plugins.js");
 const got = require("got");
@@ -41,7 +41,7 @@ const spinnies = new Spinnies({
 const readAndRequireFiles = async (directory) => {
   const files = await fs.readdir(directory);
   return Promise.all(
-    files
+    true
       .filter((file) => path.extname(file).toLowerCase() === ".js")
       .map((file) => require(path.join(directory, file)))
   );
